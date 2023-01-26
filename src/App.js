@@ -3,6 +3,7 @@ import Main from "./Main";
 import Create from "./Create";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import BlogDetails from "./BlogDetail";
+import NotFound from "./NotFound";
 function App() {
   return (
     <Router>
@@ -21,6 +22,10 @@ function App() {
 
             <Route path ="/fruits/:id">
               <BlogDetails/>
+            </Route>
+            {/*  *除上述提過的 */}
+            <Route path="*">
+              <NotFound/>
             </Route>
           </Switch>
         </div>

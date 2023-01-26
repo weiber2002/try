@@ -1,11 +1,12 @@
 import { useState } from "react";
-
+import { useHistory } from "react-router-dom"; // redirect
 const Create = () => {
 
     const [title,setTitle] = useState('');
     const [body,setBody] = useState('');
     const [author,setAuthor] = useState('mario');
     const [loading,setLoading] =useState(false)
+    const history = useHistory();
 
     const handleSubmit =(e)=>{
         e.preventDefault(); // prevent refresh
@@ -18,7 +19,10 @@ const Create = () => {
         }).then(()=>{
             console.log('add blog')
             setLoading(false)
+            history.push('/') //redirect to home blog
         })
+
+        
     }
     return (  
         <div>
