@@ -1,4 +1,5 @@
-// const people = require('./people');
+// const people = require('./people'); it will run the people.js
+
 
 // console.log(people);
 
