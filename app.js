@@ -10,7 +10,7 @@ app.listen(3000);
 // register view engine
 app.set('view engine', 'ejs');
 
-// middleware & static files
+// middleware & static files //連接前端 用的
 app.use(express.static('public'));
 
 app.use((req, res, next) => {
@@ -18,7 +18,7 @@ app.use((req, res, next) => {
   console.log('host: ', req.hostname);
   console.log('path: ', req.path);
   console.log('method: ', req.method);
-  next();
+  next(); //不用next的話就會停在這
 });
 
 app.use((req, res, next) => {
@@ -42,7 +42,7 @@ app.get('/', (req, res) => {
   res.render('index', { title: 'Home', blogs });
 });
 
-app.get('/about', (req, res) => {
+app.get('/about', (req, res) => { //partials 是訂好的 就不用特別重新定義
   res.render('about', { title: 'About' });
 });
 
