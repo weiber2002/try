@@ -10,7 +10,7 @@ app.listen(3000);
 // register view engine
 app.set('view engine', 'ejs');
 
-// middleware & static files //連接前端 用的
+// middleware & static files //connect frontend
 app.use(express.static('public'));
 
 app.use((req, res, next) => {
@@ -18,7 +18,7 @@ app.use((req, res, next) => {
   console.log('host: ', req.hostname);
   console.log('path: ', req.path);
   console.log('method: ', req.method);
-  next(); //不用next的話就會停在這
+  next(); //if next isn't used it will stuck here
 });
 
 app.use((req, res, next) => {
