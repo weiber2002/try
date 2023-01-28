@@ -14,7 +14,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .catch(err => console.log(err));
 
 // register view engine
-app.set('view engine', 'ejs');
+app.set('view engine', 'ejs'); //從這個架構可以看出view engine的強大
 
 // middleware & static files
 app.use(express.static('public'));
