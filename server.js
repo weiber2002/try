@@ -1,8 +1,16 @@
 const http = require('http');
 const fs = require('fs')
+const _ = require('lodash')
+
+//npm init 可以做出package.json
 
 const server = http.createServer((req, res) => {
   //console.log(req.url,req.method); //running on the server can't read on the browser
+
+  //lodash
+  //const num = _.random(0,20);
+  //const greet =_.once(()=>{})
+
   res.setHeader('Content-Type','text/html')
   let path = './views/';
   switch(req.url){
@@ -31,7 +39,7 @@ const server = http.createServer((req, res) => {
     else{
         // res.write(data);
         // res.end(); 可以變成下面那行
-        res.end(data);
+        res.end(data)
     }
   })
 });
