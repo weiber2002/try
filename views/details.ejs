@@ -18,9 +18,9 @@
     const trashcan = document.querySelector('a.delete');
 
     trashcan.addEventListener('click', (e) => {
-      const endpoint = `/blogs/${trashcan.dataset.doc}`;
+      const endpoint = `/blogs/${trashcan.dataset.doc}`; //data-doc
 
-      fetch(endpoint, {
+      fetch(endpoint, { //監聽點擊的動作->發出delete request->回到app.js刪除database中的資料
         method: 'DELETE',
       })
       .then(response => response.json())
