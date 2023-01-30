@@ -10,7 +10,8 @@ function App() {
       <div>
         <NavBar />
         <div> 
-          <Switch>
+          <Switch> 
+            {/* switch 在 react-router-dom 新的版本找不到了 */}
             {/* 指定確切路徑 */}
             <Route exact path="/"> 
               <Main />
