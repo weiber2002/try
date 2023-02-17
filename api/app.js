@@ -9,8 +9,12 @@
 //docker build -t {name}  build a image
 //docker image rm 刪除一個image
 //docker container rm  刪除container
-//docker prune 刪除一堆東西
-//d
+//docker system prune 刪除一堆東西
+//docker run  --rm 當container 停止運作時就刪掉
+//docker run  -v  volume
+// -v C:\docker\docker-crash-course-lesson-5\api:/app 給出絕對路徑 和 在container中的路徑 對應，用來隨時更新
+// -v /app/node_modules  module 額外存
+//docker-compose up 運行docker-compose
 const express = require('express')
 const cors = require('cors')
 
@@ -21,15 +25,15 @@ app.use(cors())
 app.get('/', (req, res) => {
   res.json([
     {
-      "id":"1",
+      "id":"1fasas",
       "title":"Book Review: The Bear & The Nightingale"
     },
     {
-      "id":"2",
+      "id":"100000",
       "title":"Game Review: Pokemon Brillian Diamond"
     },
     {
-      "id":"3",
+      "id":"3fdafssf",
       "title":"Show Review: Alice in Borderland"
     }
   ])
